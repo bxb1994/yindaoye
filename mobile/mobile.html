@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/swiper.jquery.js"></script>
+    <script src="js/swiper.animate1.0.2.min.js"></script>
+    <script src="js/mobile.js"></script>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="bg"><img src="img/bg1.jpg" alt=""></div>
+            <div class="word-sq ani" swiper-animate-effect="bounce" swiper-animate-duration="0.8s" swiper-animate-delay="0.3s">省钱啦</div>
+            <div class="word-more ani" swiper-animate-effect="rubberBand" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">更多更好玩的免费应用！</div>
+            <div class="iphone ani" swiper-animate-effect="slideInLeft" swiper-animate-duration="0.8s" swiper-animate-delay="0.3s"><img src="img/iphone.png" alt=""></div>
+            <div class="pig ani" swiper-animate-effect="slideInRight" swiper-animate-duration="0.8s" swiper-animate-delay="0.3s"><img src="img/pig.png" alt=""></div>
+            <div class="money ani" swiper-animate-effect="slideInDown" swiper-animate-duration="0.8s" swiper-animate-delay="0.3s"><img src="img/money.png" alt=""></div>
+        </div>
+        <div class="swiper-slide">
+            <div class="bg"><img src="img/bg2.jpg" alt=""></div>
+            <div class="ewm ani" swiper-animate-effect="swing" swiper-animate-duration="0.8s" swiper-animate-delay="0.3s"><img src="img/ewm.png" alt=""></div>
+            <div class="cloud1"><img src="img/cloud1.png" alt=""></div>
+            <div class="cloud2"><img src="img/cloud2.png" alt=""></div>
+            <div class="cloud3"><img src="img/cloud3.png" alt=""></div>
+            <div class="sm ani" swiper-animate-effect="pulse" swiper-animate-duration="0.8s" swiper-animate-delay="0.3s">扫描二维码登录TV端</div>
+        </div>
+        <div class="swiper-slide">
+            <div class="bg"><img src="img/bg3.jpg" alt=""></div>
+            <div class="flight ani" swiper-animate-effect="slideInRight" swiper-animate-duration="0.8s" swiper-animate-delay="0.3s"><img src="img/feiji.png" alt=""></div>
+            <div class="motuo ani" swiper-animate-effect="slideInLeft" swiper-animate-duration="0.8s" swiper-animate-delay="0.3s"><img src="img/motuo.png" alt=""></div>
+            <div class="word-hand">掌上物流商城</div>
+            <div class="word-send">为您传递美好生活</div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    var swiper=new Swiper('.swiper-container',{
+        pagination: '.swiper-pagination',
+        onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+            swiperAnimateCache(swiper); //隐藏动画元素
+            swiperAnimate(swiper); //初始化完成开始动画
+        },
+        onSlideChangeEnd: function(swiper){
+            swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+        }
+    })
+</script>
+</html>
